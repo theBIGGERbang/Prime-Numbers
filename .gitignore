@@ -1,62 +1,37 @@
-# Byte-compiled / optimized / DLL files
-__pycache__/
-*.py[cod]
-*$py.class
-
-# C extensions
-*.so
-
-# Distribution / packaging
-.Python
-env/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# PyInstaller
-#  Usually these files are written by a python script from a template
-#  before PyInstaller builds the exe, so as to inject date/other infos into it.
-*.manifest
-*.spec
-
-# Installer logs
-pip-log.txt
-pip-delete-this-directory.txt
-
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*,cover
-.hypothesis/
-
-# Translations
-*.mo
-*.pot
-
-# Django stuff:
-*.log
-
-# Sphinx documentation
-docs/_build/
-
-# PyBuilder
-target/
-
-#Ipython Notebook
-.ipynb_checkpoints
+primes=[]
+prime=False
+def primefunc(nums):
+    inp=int(nums)  
+    div2=float(inp)/2
+    div2=int(div2)
+    divby=2
+    for n in range(div2):
+        if inp%divby==0:
+            prime=False
+            break
+        else:
+            prime=True
+            divby+=1
+    if prime==True:
+        primes.append(inp)
+current=1
+inpu=int(input('please enter a number: '))
+#for k in range(inpu):
+while current<=inpu:
+    #inpu =int(input('enter a number: '))
+    if current ==1:
+        primes.append(1)
+        #print (primes)
+        current+=1
+        continue
+    elif current ==0:
+        #print (primes)
+        current+=1
+        continue
+    else:
+        primefunc(current)
+        current+=1
+       #print (primes)
+    #print ('looping')
+print('the highest prime number is: '+str(max(primes)))
+#print(primes)
